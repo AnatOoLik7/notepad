@@ -15,7 +15,6 @@ C:\Users\FastStim1\Desktop\Толя\notepad\notepad\bin\Debug\EntityFramework.xm
 C:\Users\FastStim1\Desktop\Толя\notepad\notepad\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\FastStim1\Desktop\Толя\notepad\notepad\bin\Debug\System.Data.SQLite.xml
 C:\Users\FastStim1\Desktop\Толя\notepad\notepad\obj\Debug\notepad.Form1.resources
-C:\Users\FastStim1\Desktop\Толя\notepad\notepad\obj\Debug\notepad.formAdd.resources
 C:\Users\FastStim1\Desktop\Толя\notepad\notepad\obj\Debug\notepad.formEdit.resources
 C:\Users\admin\Documents\Visual Studio 2015\Projects\notepad\notepad\bin\Debug\notepad.exe.config
 C:\Users\admin\Documents\Visual Studio 2015\Projects\notepad\notepad\obj\Debug\notepad.exe
@@ -26,3 +25,5 @@ C:\Users\admin\Documents\Visual Studio 2015\Projects\notepad\notepad\obj\Debug\n
 C:\Users\admin\Documents\Visual Studio 2015\Projects\notepad\notepad\obj\Debug\notepad.formAdd.resources
 C:\Users\admin\Documents\Visual Studio 2015\Projects\notepad\notepad\obj\Debug\notepad.Properties.Resources.resources
 C:\Users\admin\Documents\Visual Studio 2015\Projects\notepad\notepad\obj\Debug\notepad.csproj.GenerateResource.Cache
+C:\Users\FastStim1\Desktop\Толя\notepad\notepad\obj\Debug\notepad.addPhone.resources
+C:\Users\FastStim1\Desktop\Толя\notepad\notepad\obj\Debug\notepad.FormAddress.resources
