@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.cancel = new System.Windows.Forms.Button();
+            this.edit = new System.Windows.Forms.Button();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.more = new System.Windows.Forms.RichTextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -44,12 +44,12 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.data = new System.Windows.Forms.DateTimePicker();
+            this.date = new System.Windows.Forms.DateTimePicker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.sex2 = new System.Windows.Forms.RadioButton();
+            this.sex1 = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -78,23 +78,24 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
+            // cancel
             // 
-            this.button2.Location = new System.Drawing.Point(12, 370);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Отменить";
-            this.button2.UseVisualStyleBackColor = true;
+            this.cancel.Location = new System.Drawing.Point(12, 370);
+            this.cancel.Name = "cancel";
+            this.cancel.Size = new System.Drawing.Size(75, 23);
+            this.cancel.TabIndex = 15;
+            this.cancel.Text = "Отменить";
+            this.cancel.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // edit
             // 
-            this.button1.Location = new System.Drawing.Point(424, 370);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Сохранить";
-            this.button1.UseVisualStyleBackColor = true;
+            this.edit.Location = new System.Drawing.Point(424, 370);
+            this.edit.Name = "edit";
+            this.edit.Size = new System.Drawing.Size(75, 23);
+            this.edit.TabIndex = 16;
+            this.edit.Text = "Изменить";
+            this.edit.UseVisualStyleBackColor = true;
+            this.edit.Click += new System.EventHandler(this.edit_Click);
             // 
             // groupBox10
             // 
@@ -217,7 +218,7 @@
             // 
             // groupBox8
             // 
-            this.groupBox8.Controls.Add(this.data);
+            this.groupBox8.Controls.Add(this.date);
             this.groupBox8.Location = new System.Drawing.Point(12, 120);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(197, 75);
@@ -225,12 +226,12 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "День рождения";
             // 
-            // data
+            // date
             // 
-            this.data.Location = new System.Drawing.Point(9, 30);
-            this.data.Name = "data";
-            this.data.Size = new System.Drawing.Size(175, 20);
-            this.data.TabIndex = 0;
+            this.date.Location = new System.Drawing.Point(9, 30);
+            this.date.Name = "date";
+            this.date.Size = new System.Drawing.Size(175, 20);
+            this.date.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -251,8 +252,8 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.radioButton3);
-            this.groupBox7.Controls.Add(this.radioButton4);
+            this.groupBox7.Controls.Add(this.sex2);
+            this.groupBox7.Controls.Add(this.sex1);
             this.groupBox7.Location = new System.Drawing.Point(12, 289);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(197, 63);
@@ -260,27 +261,29 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Пол";
             // 
-            // radioButton3
+            // sex2
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(18, 39);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(72, 17);
-            this.radioButton3.TabIndex = 0;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Женский";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.sex2.AutoSize = true;
+            this.sex2.Location = new System.Drawing.Point(18, 39);
+            this.sex2.Name = "sex2";
+            this.sex2.Size = new System.Drawing.Size(72, 17);
+            this.sex2.TabIndex = 0;
+            this.sex2.Text = "Женский";
+            this.sex2.UseVisualStyleBackColor = true;
+            this.sex2.CheckedChanged += new System.EventHandler(this.checkVal);
             // 
-            // radioButton4
+            // sex1
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(18, 16);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(71, 17);
-            this.radioButton4.TabIndex = 0;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Мужской";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.sex1.AutoSize = true;
+            this.sex1.Checked = true;
+            this.sex1.Location = new System.Drawing.Point(18, 16);
+            this.sex1.Name = "sex1";
+            this.sex1.Size = new System.Drawing.Size(71, 17);
+            this.sex1.TabIndex = 0;
+            this.sex1.TabStop = true;
+            this.sex1.Text = "Мужской";
+            this.sex1.UseVisualStyleBackColor = true;
+            this.sex1.CheckedChanged += new System.EventHandler(this.checkVal);
             // 
             // groupBox2
             // 
@@ -445,9 +448,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 405);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(512, 404);
+            this.Controls.Add(this.cancel);
+            this.Controls.Add(this.edit);
             this.Controls.Add(this.groupBox10);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox9);
@@ -482,10 +485,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button cancel;
+        private System.Windows.Forms.Button edit;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.RichTextBox more;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Label label9;
@@ -498,12 +500,12 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.GroupBox groupBox8;
-        private System.Windows.Forms.DateTimePicker data;
+        private System.Windows.Forms.DateTimePicker date;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton sex2;
+        private System.Windows.Forms.RadioButton sex1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
@@ -521,5 +523,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.RichTextBox more;
     }
 }

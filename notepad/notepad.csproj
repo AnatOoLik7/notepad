@@ -81,23 +81,17 @@
     <Compile Include="addPhone.Designer.cs">
       <DependentUpon>addPhone.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAddress.cs">
+    <Compile Include="formAddress.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddress.Designer.cs">
-      <DependentUpon>FormAddress.cs</DependentUpon>
+    <Compile Include="formAddress.Designer.cs">
+      <DependentUpon>formAddress.cs</DependentUpon>
     </Compile>
     <Compile Include="formEdit.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formEdit.Designer.cs">
       <DependentUpon>formEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formAdd.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formAdd.Designer.cs">
-      <DependentUpon>formAdd.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -107,14 +101,11 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAddress.resx">
-      <DependentUpon>FormAddress.cs</DependentUpon>
+    <EmbeddedResource Include="formAddress.resx">
+      <DependentUpon>formAddress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formEdit.resx">
       <DependentUpon>formEdit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formAdd.resx">
-      <DependentUpon>formAdd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

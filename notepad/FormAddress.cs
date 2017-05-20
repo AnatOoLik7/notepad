@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace notepad
 {
-    public partial class FormAddress : Form
+    public partial class formAddress : Form
     {
-        public FormAddress()
+        public formAddress()
         {
             InitializeComponent();
         }
