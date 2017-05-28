@@ -75,23 +75,17 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="addPhone.cs">
+    <Compile Include="shablonEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="addPhone.Designer.cs">
-      <DependentUpon>addPhone.cs</DependentUpon>
+    <Compile Include="shablonEdit.Designer.cs">
+      <DependentUpon>shablonEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="formView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="formView.Designer.cs">
       <DependentUpon>formView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="formAddress.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="formAddress.Designer.cs">
-      <DependentUpon>formAddress.cs</DependentUpon>
     </Compile>
     <Compile Include="formEdit.cs">
       <SubType>Form</SubType>
@@ -101,17 +95,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="addPhone.resx">
-      <DependentUpon>addPhone.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="shablon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="shablon.Designer.cs">
+      <DependentUpon>shablon.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formView.resx">
       <DependentUpon>formView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="formAddress.resx">
-      <DependentUpon>formAddress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="formEdit.resx">
       <DependentUpon>formEdit.cs</DependentUpon>
@@ -125,6 +119,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="shablon.resx">
+      <DependentUpon>shablon.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="shablonEdit.resx">
+      <DependentUpon>shablonEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

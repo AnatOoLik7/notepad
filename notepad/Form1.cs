@@ -27,10 +27,13 @@ namespace notepad
         {
             int size = note.getCountNote();
             notebooks[] answer = new notebooks[size];
+            phones[] phoneAnswer = new phones[note.getCountMultiPhone()];
+
 
             answer = note.getMultiNote(size);
+            phoneAnswer = note.getMultiPhone();
 
-            createFormObject(size, answer);
+            createFormObject(size, answer, phoneAnswer);
         }
 
         private void add_Click(object sender, EventArgs e)
@@ -40,19 +43,47 @@ namespace notepad
             formAdd.Show();
         }
 
+        private void view_Click(object sender, EventArgs e)
+        {
+            formView formView = new formView();
+            string[] splits = ((Button)sender).Name.Split('_');
+            int id = Convert.ToInt32(splits[1]);
+            formView.id = id;
+            formView.Show();
+        }
+
         private void edit_Click(object sender, EventArgs e)
         {
             formEdit formEdit = new formEdit();
             string[] splits = ((Button)sender).Name.Split('_');
             int id = Convert.ToInt32(splits[1]);
             formEdit.id = id;
-            //formEdit.id = 1;
             formEdit.Show();
+        }
+
+        private void delete_Click(object sender, EventArgs e)
+        {
+            string[] splits = ((Button)sender).Name.Split('_');
+            int id = Convert.ToInt32(splits[1]);
+
+            string message = "Вы уверены что хотите удалить анкету?";
+            string caption = "Удаление анкеты";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result;
+
+            result = MessageBox.Show(message, caption, buttons);
+
+            if (result == System.Windows.Forms.DialogResult.Yes)
+            {
+                note.deletePhone(id);
+                note.deleteAddress(id);
+                note.deleteNote(id);
+            }
         }
 
 
 
-        private void createFormObject(int size, notebooks[] answer)
+        private void createFormObject(int size, notebooks[] answer, phones[] phoneAnswer)
         {
             for (int i = 0; i < size; i++)
             {
@@ -80,23 +111,54 @@ namespace notepad
                 temp_l[0].Controls.Add(new Label() { Name = "phone_l" + i, Text = "Номер", Location = new Point(5, 20), Size = new Size(90, 20) });
                 temp_l[0].Controls.Add(new Label() { Name = "note_l" + i, Text = "Примечания", Location = new Point(100, 20), Size = new Size(90, 20) });
 
-                temp_l[0].Controls.Add(new Label() { Name = "phone" + i, Text = "22222", Location = new Point(5, 40), Size = new Size(90, 20) });
-                temp_l[0].Controls.Add(new Label() { Name = "note" + i, Text = "test", Location = new Point(100, 40), Size = new Size(90, 20) });
+                for (int j = 1; j < 5; j++)
+                {
+                    temp_l[0].Controls.Add(new Label() { Name = "phone" + i + "-" + j, Text = "", Location = new Point(5, 30 + j * 20), Size = new Size(90, 20) });
+                    temp_l[0].Controls.Add(new Label() { Name = "note" + i + "-" + j, Text = "", Location = new Point(100, 30 + j * 20), Size = new Size(90, 20) });
+                }
 
                 temp_l = temp[0].Controls.Find("button" + i, true);
                 temp_l[0].Controls.Add(new Button() { Name = "viewButton_" + answer[i].id, Text = "Просмотр", Location = new Point(5, 65), Size = new Size(90, 20) });
                 temp_l[0].Controls.Add(new Button() { Name = "editButton_" + answer[i].id, Text = "Изменить", Location = new Point(5, 90), Size = new Size(90, 20) });
                 temp_l[0].Controls.Add(new Button() { Name = "delButton_" + answer[i].id, Text = "Удалить", Location = new Point(5, 115), Size = new Size(90, 20) });
 
-                temp_l = temp[0].Controls.Find("editButton_" + answer[i].id, true);
+                temp_l = temp[0].Controls.Find("viewButton_" + answer[i].id, true);
+                temp_l[0].Click += new EventHandler(view_Click);
 
+                temp_l = temp[0].Controls.Find("editButton_" + answer[i].id, true);
                 temp_l[0].Click += new EventHandler(edit_Click);
+
+                temp_l = temp[0].Controls.Find("delButton_" + answer[i].id, true);
+                temp_l[0].Click += new EventHandler(delete_Click);
+
+                int y = 1;
+                int x = 0;
+                while(x < phoneAnswer.Length)
+                {
+                    if (phoneAnswer[x].id_notebook > answer[i].id) break;
+                    else if (phoneAnswer[x].id_notebook == answer[i].id)
+                    {
+                        temp_l = temp[0].Controls.Find("phone" + i + "-" + y, true);
+                        temp_l[0].Text = phoneAnswer[x].phone;
+                        temp_l = temp[0].Controls.Find("note" + i + "-" + y, true);
+                        temp_l[0].Text = phoneAnswer[x].note;
+                        y++;
+                    }
+                    x++;
+                }
             }
+            
         }
 
         private void notes_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void grats_Click(object sender, EventArgs e)
+        {
+            shablon shablon = new shablon();
+            shablon.Show();
         }
     }
 

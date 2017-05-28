@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace notepad
 {
-    public partial class addPhone : Form
+    public partial class shablon : Form
     {
-        public addPhone()
+        public shablon()
         {
             InitializeComponent();
+        }
+
+        private void shablon_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

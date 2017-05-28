@@ -25,8 +25,6 @@ C:\Users\admin\Documents\Visual Studio 2015\Projects\notepad\notepad\obj\Debug\n
 C:\Users\admin\Documents\Visual Studio 2015\Projects\notepad\notepad\obj\Debug\notepad.formAdd.resources
 C:\Users\admin\Documents\Visual Studio 2015\Projects\notepad\notepad\obj\Debug\notepad.Properties.Resources.resources
 C:\Users\admin\Documents\Visual Studio 2015\Projects\notepad\notepad\obj\Debug\notepad.csproj.GenerateResource.Cache
-C:\Users\FastStim1\Desktop\Толя\notepad\notepad\obj\Debug\notepad.addPhone.resources
-C:\Users\FastStim1\Desktop\Толя\notepad\notepad\obj\Debug\notepad.FormAddress.resources
 C:\Users\admin\Documents\github\notepad\notepad\bin\Debug\notepad.exe.config
 C:\Users\admin\Documents\github\notepad\notepad\bin\Debug\notepad.exe
 C:\Users\admin\Documents\github\notepad\notepad\bin\Debug\notepad.pdb
@@ -48,3 +46,6 @@ C:\Users\admin\Documents\github\notepad\notepad\obj\Debug\notepad.csproj.Generat
 C:\Users\admin\Documents\github\notepad\notepad\obj\Debug\notepad.exe
 C:\Users\admin\Documents\github\notepad\notepad\obj\Debug\notepad.pdb
 C:\Users\admin\Documents\github\notepad\notepad\obj\Debug\notepad.Form2.resources
+C:\Users\FastStim1\Desktop\Толя\notepad\notepad\obj\Debug\notepad.formView.resources
+C:\Users\FastStim1\Desktop\Толя\notepad\notepad\obj\Debug\notepad.shablon.resources
+C:\Users\FastStim1\Desktop\Толя\notepad\notepad\obj\Debug\notepad.shablonEdit.resources

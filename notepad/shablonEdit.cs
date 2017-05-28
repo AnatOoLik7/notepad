@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace notepad
 {
-    public partial class formAddress : Form
+    public partial class shablonEdit : Form
     {
-        public formAddress()
+        public shablonEdit()
         {
             InitializeComponent();
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
