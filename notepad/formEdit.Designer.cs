@@ -40,7 +40,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.date = new System.Windows.Forms.DateTimePicker();
@@ -66,15 +65,17 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.phone = new System.Windows.Forms.TextBox();
+            this.phone = new System.Windows.Forms.GroupBox();
+            this.note4 = new System.Windows.Forms.TextBox();
+            this.phone4 = new System.Windows.Forms.TextBox();
+            this.note3 = new System.Windows.Forms.TextBox();
+            this.note2 = new System.Windows.Forms.TextBox();
+            this.phone3 = new System.Windows.Forms.TextBox();
+            this.phone2 = new System.Windows.Forms.TextBox();
+            this.note1 = new System.Windows.Forms.TextBox();
+            this.phone1 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -87,9 +88,6 @@
             this.state = new System.Windows.Forms.TextBox();
             this.country = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox10.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -99,7 +97,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox11.SuspendLayout();
+            this.phone.SuspendLayout();
             this.groupBox12.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.SuspendLayout();
@@ -192,7 +190,6 @@
             // 
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Controls.Add(this.textBox5);
             this.groupBox4.Controls.Add(this.groupBox9);
             this.groupBox4.Controls.Add(this.textBox4);
             this.groupBox4.Location = new System.Drawing.Point(12, 201);
@@ -219,13 +216,6 @@
             this.label4.Size = new System.Drawing.Size(79, 13);
             this.label4.TabIndex = 1;
             this.label4.Text = "Место работы";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(91, 43);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 0;
             // 
             // textBox4
             // 
@@ -464,38 +454,80 @@
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 0;
             // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.textBox12);
-            this.groupBox11.Controls.Add(this.textBox11);
-            this.groupBox11.Controls.Add(this.textBox10);
-            this.groupBox11.Controls.Add(this.textBox9);
-            this.groupBox11.Controls.Add(this.textBox8);
-            this.groupBox11.Controls.Add(this.textBox7);
-            this.groupBox11.Controls.Add(this.textBox6);
-            this.groupBox11.Controls.Add(this.phone);
-            this.groupBox11.Controls.Add(this.label11);
-            this.groupBox11.Controls.Add(this.label12);
-            this.groupBox11.Location = new System.Drawing.Point(281, 355);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(218, 175);
-            this.groupBox11.TabIndex = 17;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Номера телефонов";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(109, 55);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(102, 20);
-            this.textBox6.TabIndex = 3;
-            // 
             // phone
             // 
-            this.phone.Location = new System.Drawing.Point(6, 55);
+            this.phone.Controls.Add(this.note4);
+            this.phone.Controls.Add(this.phone4);
+            this.phone.Controls.Add(this.note3);
+            this.phone.Controls.Add(this.note2);
+            this.phone.Controls.Add(this.phone3);
+            this.phone.Controls.Add(this.phone2);
+            this.phone.Controls.Add(this.note1);
+            this.phone.Controls.Add(this.phone1);
+            this.phone.Controls.Add(this.label11);
+            this.phone.Controls.Add(this.label12);
+            this.phone.Location = new System.Drawing.Point(281, 358);
             this.phone.Name = "phone";
-            this.phone.Size = new System.Drawing.Size(79, 20);
-            this.phone.TabIndex = 2;
+            this.phone.Size = new System.Drawing.Size(218, 172);
+            this.phone.TabIndex = 17;
+            this.phone.TabStop = false;
+            this.phone.Text = "Номера телефонов";
+            // 
+            // note4
+            // 
+            this.note4.Location = new System.Drawing.Point(109, 133);
+            this.note4.Name = "note4";
+            this.note4.Size = new System.Drawing.Size(102, 20);
+            this.note4.TabIndex = 9;
+            // 
+            // phone4
+            // 
+            this.phone4.Location = new System.Drawing.Point(6, 133);
+            this.phone4.Name = "phone4";
+            this.phone4.Size = new System.Drawing.Size(79, 20);
+            this.phone4.TabIndex = 8;
+            // 
+            // note3
+            // 
+            this.note3.Location = new System.Drawing.Point(109, 107);
+            this.note3.Name = "note3";
+            this.note3.Size = new System.Drawing.Size(102, 20);
+            this.note3.TabIndex = 7;
+            // 
+            // note2
+            // 
+            this.note2.Location = new System.Drawing.Point(109, 81);
+            this.note2.Name = "note2";
+            this.note2.Size = new System.Drawing.Size(102, 20);
+            this.note2.TabIndex = 6;
+            // 
+            // phone3
+            // 
+            this.phone3.Location = new System.Drawing.Point(6, 107);
+            this.phone3.Name = "phone3";
+            this.phone3.Size = new System.Drawing.Size(79, 20);
+            this.phone3.TabIndex = 5;
+            // 
+            // phone2
+            // 
+            this.phone2.Location = new System.Drawing.Point(6, 81);
+            this.phone2.Name = "phone2";
+            this.phone2.Size = new System.Drawing.Size(79, 20);
+            this.phone2.TabIndex = 4;
+            // 
+            // note1
+            // 
+            this.note1.Location = new System.Drawing.Point(109, 55);
+            this.note1.Name = "note1";
+            this.note1.Size = new System.Drawing.Size(102, 20);
+            this.note1.TabIndex = 3;
+            // 
+            // phone1
+            // 
+            this.phone1.Location = new System.Drawing.Point(6, 55);
+            this.phone1.Name = "phone1";
+            this.phone1.Size = new System.Drawing.Size(79, 20);
+            this.phone1.TabIndex = 2;
             // 
             // label11
             // 
@@ -514,34 +546,6 @@
             this.label12.Size = new System.Drawing.Size(70, 13);
             this.label12.TabIndex = 1;
             this.label12.Text = "Примечания";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(6, 81);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(79, 20);
-            this.textBox7.TabIndex = 4;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(6, 107);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(79, 20);
-            this.textBox8.TabIndex = 5;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(109, 81);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(102, 20);
-            this.textBox9.TabIndex = 6;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(109, 107);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(102, 20);
-            this.textBox10.TabIndex = 7;
             // 
             // groupBox12
             // 
@@ -652,37 +656,13 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Дополнительно";
             // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(6, 133);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(79, 20);
-            this.textBox11.TabIndex = 8;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(109, 133);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(102, 20);
-            this.textBox12.TabIndex = 9;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(340, 536);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Просмотр";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // formEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(512, 595);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(512, 573);
             this.Controls.Add(this.groupBox12);
-            this.Controls.Add(this.groupBox11);
+            this.Controls.Add(this.phone);
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.edit);
             this.Controls.Add(this.groupBox5);
@@ -709,8 +689,8 @@
             this.groupBox6.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
+            this.phone.ResumeLayout(false);
+            this.phone.PerformLayout();
             this.groupBox12.ResumeLayout(false);
             this.groupBox12.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -731,7 +711,6 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.GroupBox groupBox8;
         private System.Windows.Forms.DateTimePicker date;
@@ -758,13 +737,13 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.RichTextBox more;
-        private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox phone;
+        private System.Windows.Forms.GroupBox phone;
+        private System.Windows.Forms.TextBox note3;
+        private System.Windows.Forms.TextBox note2;
+        private System.Windows.Forms.TextBox phone3;
+        private System.Windows.Forms.TextBox phone2;
+        private System.Windows.Forms.TextBox note1;
+        private System.Windows.Forms.TextBox phone1;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.GroupBox groupBox12;
@@ -778,9 +757,8 @@
         private System.Windows.Forms.TextBox postal;
         private System.Windows.Forms.TextBox state;
         private System.Windows.Forms.TextBox country;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox note4;
+        private System.Windows.Forms.TextBox phone4;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.Button button1;
     }
 }
