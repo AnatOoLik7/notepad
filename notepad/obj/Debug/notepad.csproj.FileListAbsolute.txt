@@ -27,3 +27,24 @@ C:\Users\admin\Documents\Visual Studio 2015\Projects\notepad\notepad\obj\Debug\n
 C:\Users\admin\Documents\Visual Studio 2015\Projects\notepad\notepad\obj\Debug\notepad.csproj.GenerateResource.Cache
 C:\Users\FastStim1\Desktop\Толя\notepad\notepad\obj\Debug\notepad.addPhone.resources
 C:\Users\FastStim1\Desktop\Толя\notepad\notepad\obj\Debug\notepad.FormAddress.resources
+C:\Users\admin\Documents\github\notepad\notepad\bin\Debug\notepad.exe.config
+C:\Users\admin\Documents\github\notepad\notepad\bin\Debug\notepad.exe
+C:\Users\admin\Documents\github\notepad\notepad\bin\Debug\notepad.pdb
+C:\Users\admin\Documents\github\notepad\notepad\bin\Debug\EntityFramework.dll
+C:\Users\admin\Documents\github\notepad\notepad\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\admin\Documents\github\notepad\notepad\bin\Debug\System.Data.SQLite.dll
+C:\Users\admin\Documents\github\notepad\notepad\bin\Debug\System.Data.SQLite.EF6.dll
+C:\Users\admin\Documents\github\notepad\notepad\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\admin\Documents\github\notepad\notepad\bin\Debug\EntityFramework.xml
+C:\Users\admin\Documents\github\notepad\notepad\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\admin\Documents\github\notepad\notepad\bin\Debug\System.Data.SQLite.xml
+C:\Users\admin\Documents\github\notepad\notepad\obj\Debug\notepad.csprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\github\notepad\notepad\obj\Debug\notepad.addPhone.resources
+C:\Users\admin\Documents\github\notepad\notepad\obj\Debug\notepad.Form1.resources
+C:\Users\admin\Documents\github\notepad\notepad\obj\Debug\notepad.formAddress.resources
+C:\Users\admin\Documents\github\notepad\notepad\obj\Debug\notepad.formEdit.resources
+C:\Users\admin\Documents\github\notepad\notepad\obj\Debug\notepad.Properties.Resources.resources
+C:\Users\admin\Documents\github\notepad\notepad\obj\Debug\notepad.csproj.GenerateResource.Cache
+C:\Users\admin\Documents\github\notepad\notepad\obj\Debug\notepad.exe
+C:\Users\admin\Documents\github\notepad\notepad\obj\Debug\notepad.pdb
+C:\Users\admin\Documents\github\notepad\notepad\obj\Debug\notepad.Form2.resources

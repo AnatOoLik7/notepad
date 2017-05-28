@@ -93,6 +93,11 @@ namespace notepad
                 temp_l[0].Click += new EventHandler(edit_Click);
             }
         }
+
+        private void notes_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 }

@@ -50,6 +50,7 @@
             this.notes.Name = "notes";
             this.notes.Size = new System.Drawing.Size(569, 454);
             this.notes.TabIndex = 1;
+            this.notes.Paint += new System.Windows.Forms.PaintEventHandler(this.notes_Paint);
             // 
             // Form1
             // 
