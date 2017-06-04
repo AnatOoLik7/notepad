@@ -21,5 +21,16 @@ namespace notepad
         {
 
         }
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+            shablonEdit shablon = new shablonEdit();
+            shablon.Show();
+        }
     }
 }

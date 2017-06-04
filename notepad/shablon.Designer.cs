@@ -49,6 +49,7 @@
             this.add.TabIndex = 1;
             this.add.Text = "Добавить";
             this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // close
             // 
@@ -58,6 +59,7 @@
             this.close.TabIndex = 2;
             this.close.Text = "Закрыть";
             this.close.UseVisualStyleBackColor = true;
+            this.close.Click += new System.EventHandler(this.close_Click);
             // 
             // shablon
             // 

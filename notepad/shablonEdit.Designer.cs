@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.text = new System.Windows.Forms.RichTextBox();
             this.add = new System.Windows.Forms.Button();
             this.close = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
@@ -38,14 +38,14 @@
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // text
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(370, 96);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.text.Dock = System.Windows.Forms.DockStyle.Top;
+            this.text.Location = new System.Drawing.Point(0, 0);
+            this.text.Name = "text";
+            this.text.Size = new System.Drawing.Size(370, 96);
+            this.text.TabIndex = 0;
+            this.text.Text = "";
             // 
             // add
             // 
@@ -55,6 +55,7 @@
             this.add.TabIndex = 2;
             this.add.Text = "Добавить";
             this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
             // 
             // close
             // 
@@ -64,6 +65,7 @@
             this.close.TabIndex = 3;
             this.close.Text = "Отменить";
             this.close.UseVisualStyleBackColor = true;
+            this.close.Click += new System.EventHandler(this.close_Click);
             // 
             // radioButton1
             // 
@@ -119,7 +121,7 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.close);
             this.Controls.Add(this.add);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.text);
             this.Name = "shablonEdit";
             this.Text = "Добавить шаблон";
             this.groupBox1.ResumeLayout(false);
@@ -130,7 +132,7 @@
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox text;
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button close;
         private System.Windows.Forms.RadioButton radioButton1;

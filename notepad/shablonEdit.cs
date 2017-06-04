@@ -16,10 +16,20 @@ namespace notepad
         {
             InitializeComponent();
         }
-
+        
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void close_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void add_Click(object sender, EventArgs e)
+        {
+                       
         }
     }
 }
