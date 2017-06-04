@@ -72,8 +72,11 @@
             this.Controls.Add(this.grats);
             this.Controls.Add(this.notes);
             this.Controls.Add(this.add);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Записная книжка";
+            this.Activated += new System.EventHandler(this.Form1_Activated);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 

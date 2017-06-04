@@ -16,6 +16,7 @@ namespace notepad
     public partial class Form1 : Form
     {
         public sql note = new sql("bazadannih.db");
+        public static bool refresh = false;
 
         public Form1()
         {
@@ -78,6 +79,10 @@ namespace notepad
                 note.deletePhone(id);
                 note.deleteAddress(id);
                 note.deleteNote(id);
+
+                refresh = true;
+                refreshForm();
+
             }
         }
 
@@ -159,6 +164,30 @@ namespace notepad
         {
             shablon shablon = new shablon();
             shablon.Show();
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+            refreshForm();
+        }
+
+        private void refreshForm()
+        {
+            if (refresh == true)
+            {
+                notes.Controls.Clear();
+                int size = note.getCountNote();
+                notebooks[] answer = new notebooks[size];
+                phones[] phoneAnswer = new phones[note.getCountMultiPhone()];
+
+
+                answer = note.getMultiNote(size);
+                phoneAnswer = note.getMultiPhone();
+
+                createFormObject(size, answer, phoneAnswer);
+
+                refresh = false;
+            }
         }
     }
 

@@ -14,7 +14,6 @@ namespace notepad
     {
         private sql note = new sql("bazadannih.db");
         public int id = 0;
-        private int sex = 0;
 
         public formView()
         {

@@ -28,28 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.fio = new System.Windows.Forms.Panel();
-            this.add = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            this.notes = new System.Windows.Forms.Panel();
             this.close = new System.Windows.Forms.Button();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // fio
+            // notes
             // 
-            this.fio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.fio.Location = new System.Drawing.Point(0, 0);
-            this.fio.Name = "fio";
-            this.fio.Size = new System.Drawing.Size(721, 184);
-            this.fio.TabIndex = 0;
-            // 
-            // add
-            // 
-            this.add.Location = new System.Drawing.Point(620, 191);
-            this.add.Name = "add";
-            this.add.Size = new System.Drawing.Size(87, 37);
-            this.add.TabIndex = 1;
-            this.add.Text = "Добавить";
-            this.add.UseVisualStyleBackColor = true;
-            this.add.Click += new System.EventHandler(this.add_Click);
+            this.notes.AutoScroll = true;
+            this.notes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.notes.Location = new System.Drawing.Point(0, 0);
+            this.notes.Name = "notes";
+            this.notes.Size = new System.Drawing.Size(627, 185);
+            this.notes.TabIndex = 0;
+            this.notes.Paint += new System.Windows.Forms.PaintEventHandler(this.fio_Paint);
             // 
             // close
             // 
@@ -61,14 +55,30 @@
             this.close.UseVisualStyleBackColor = true;
             this.close.Click += new System.EventHandler(this.close_Click);
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(528, 191);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(87, 37);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Шаблоны";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // shablon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 240);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(627, 239);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.close);
-            this.Controls.Add(this.add);
-            this.Controls.Add(this.fio);
+            this.Controls.Add(this.notes);
             this.Name = "shablon";
             this.Text = "Скоро день рождения!";
             this.Load += new System.EventHandler(this.shablon_Load);
@@ -78,8 +88,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel fio;
-        private System.Windows.Forms.Button add;
+        private System.Windows.Forms.Panel notes;
         private System.Windows.Forms.Button close;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button button1;
     }
 }
