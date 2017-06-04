@@ -122,12 +122,18 @@ namespace notepad
                 note.setSingleNote(phoneRequest);
             }
 
+            Form1.refresh = true;
             this.Close();
         }
 
         private void cancel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

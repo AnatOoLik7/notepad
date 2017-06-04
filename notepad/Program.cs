@@ -45,7 +45,7 @@ namespace notepad
     {
         public int id;
         public int sex;
-        public int text;
+        public string text;
     }
 
 
@@ -99,6 +99,31 @@ namespace notepad
         {
             //Закрытие соединия с базой данных
             connection.Close();
+        }
+
+        public shablons getSingleShablon(int id)
+        {
+            //Запрос одиночной анкеты
+            shablons request_note;
+            request_note.id = id;
+            request_note.sex = 0;
+            request_note.text = "";
+            SQLiteConnection connection = openConnection();
+
+            string query = "SELECT * FROM shablon WHERE id =" + id + ";";
+            SQLiteCommand Command = new SQLiteCommand(query, connection);
+
+            SQLiteDataReader reader = Command.ExecuteReader();
+            if (reader.Read())
+            {
+                request_note.sex = Convert.ToInt32(reader["sex"]);
+                request_note.text = reader["text"].ToString();
+            }
+            reader.Close();
+
+            closeConnection(ref connection);
+
+            return request_note;
         }
 
         public notebooks getSingleNote(int id)
@@ -213,13 +238,14 @@ namespace notepad
             return request_phone;
         }
 
-        public int getCountShablon()
+        public int getCountShablonDate()
         {
             int count = 0;
 
             SQLiteConnection connection = openConnection();
 
-            string query = "SELECT Count(id) FROM notebook WHERE date > (SELECT DATETIME('now', '-7 day'));";
+            string query = "SELECT Count(id) FROM notebook WHERE date(strftime('%Y', 'now')||strftime('-%m-%d', date)) BETWEEN date(strftime('%Y-%m-%d', 'now'), '-1 day') and date(strftime('%Y-%m-%d', 'now'), '+7 day');";
+
             SQLiteCommand Command = new SQLiteCommand(query, connection);
 
             SQLiteDataReader reader = Command.ExecuteReader();
@@ -233,14 +259,14 @@ namespace notepad
             return count;
         }
 
-        public notebooks[] getShablon()
+        public notebooks[] getShablonDate()
         {
 
-            notebooks[] request_note = new notebooks[getCountShablon()];
+            notebooks[] request_note = new notebooks[getCountShablonDate()];
 
             SQLiteConnection connection = openConnection();
 
-            string query = "SELECT * FROM notebook WHERE  WHERE (SELECT DATETIME(date, '+1 day')) > (SELECT DATETIME('now', '-7 day')) ORDER BY lastname, firstname, secondname;";
+            string query = "SELECT * FROM notebook WHERE date(strftime('%Y', 'now')||strftime('-%m-%d', date)) BETWEEN date(strftime('%Y-%m-%d', 'now'), '-1 day') and date(strftime('%Y-%m-%d', 'now'), '+7 day') ORDER BY lastname, firstname, secondname;";
             SQLiteCommand Command = new SQLiteCommand(query, connection);
 
             SQLiteDataReader reader = Command.ExecuteReader();
@@ -262,14 +288,211 @@ namespace notepad
             return request_note;
         }
 
-        public void setShablon(int id_notebook, int id_shablon)
+        public shablons[] getShablon()
         {
 
+            shablons[] request_note = new shablons[getCountShablon()];
+
+            SQLiteConnection connection = openConnection();
+
+            string query = "SELECT * FROM shablon;";
+            SQLiteCommand Command = new SQLiteCommand(query, connection);
+
+            SQLiteDataReader reader = Command.ExecuteReader();
+            int i = 0;
+            while (reader.Read())
+            {
+                request_note[i].id = Convert.ToInt32(reader["id"]);
+                request_note[i].sex = Convert.ToInt32(reader["sex"]);
+                request_note[i].text = reader["text"].ToString();
+                i++;
+            }
+            reader.Close();
+
+            closeConnection(ref connection);
+
+            return request_note;
+        }
+
+        public int getCountShablon(int sex)
+        {
+            int count = 0;
+
+            SQLiteConnection connection = openConnection();
+
+            string query = "SELECT Count(id) FROM shablon WHERE sex = " + sex + " or sex = 2 ;";
+            SQLiteCommand Command = new SQLiteCommand(query, connection);
+
+            SQLiteDataReader reader = Command.ExecuteReader();
+            if (reader.Read())
+            {
+                count = Convert.ToInt32(reader["Count(id)"]);
+            }
+            reader.Close();
+            closeConnection(ref connection);
+
+            return count;
+        }
+
+        public int getCountShablon()
+        {
+            int count = 0;
+
+            SQLiteConnection connection = openConnection();
+
+            string query = "SELECT Count(id) FROM shablon;";
+            SQLiteCommand Command = new SQLiteCommand(query, connection);
+
+            SQLiteDataReader reader = Command.ExecuteReader();
+            if (reader.Read())
+            {
+                count = Convert.ToInt32(reader["Count(id)"]);
+            }
+            reader.Close();
+            closeConnection(ref connection);
+
+            return count;
+        }
+
+        public int getSexNote(int id)
+        {
+            int sex = 0;
+
+            SQLiteConnection connection = openConnection();
+
+            string query = "SELECT sex FROM notebook WHERE id =" + id + ";";
+            SQLiteCommand Command = new SQLiteCommand(query, connection);
+
+            SQLiteDataReader reader = Command.ExecuteReader();
+            if (reader.Read())
+            {
+                sex = Convert.ToInt32(reader["sex"]);
+            }
+            reader.Close();
+            closeConnection(ref connection);
+
+            return sex;
+        }
+
+        public int[] getIdShablon(int id)
+        {
+
+            int sex = getSexNote(id);
+
+            int[] arr = new int[getCountShablon(sex)];
+
+            SQLiteConnection connection = openConnection();
+
+            string query = "SELECT id FROM shablon WHERE sex = " + sex + " or sex = 2 ;";
+            SQLiteCommand Command = new SQLiteCommand(query, connection);
+
+            int i = 0;
+            SQLiteDataReader reader = Command.ExecuteReader();
+            while (reader.Read())
+            {
+                arr[i] = Convert.ToInt32(reader["id"]);
+                i++;
+            }
+            reader.Close();
+
+            closeConnection(ref connection);
+
+            return arr;
+        }
+
+        public void addLink(int id, int id_shablon)
+        {
+            // Добавление записи в таблицу связей
+            SQLiteConnection connection = openConnection();
+
+            string query = "INSERT INTO link (id_notebook, id_shablon) VALUES ('" + id + "','" + id_shablon + "');";
+            SQLiteCommand Command = new SQLiteCommand(query, connection);
+
+            Command.ExecuteNonQuery();
+
+            closeConnection(ref connection);
+        }
+
+        public bool existShablon(int id)
+        {
+            bool test = false;
+            SQLiteConnection connection = openConnection();
+
+            string query = "SELECT Count(id) as id FROM link WHERE id_notebook = "+ id +";";
+            SQLiteCommand Command = new SQLiteCommand(query, connection);
+
+            SQLiteDataReader reader = Command.ExecuteReader();
+            if (reader.Read())
+            {
+                if (Convert.ToInt32(reader["id"]) > 0)
+                    test = true;
+            }
+            reader.Close();
+            closeConnection(ref connection);
+
+            return test;
+        }
+
+        public string getSinleShablon(int id)
+        {
+            // Получение Шаблона
+
+            string answer = "";
+
+            SQLiteConnection connection = openConnection();
+
+            string query = "SELECT shablon.text FROM link, shablon WHERE link.id_shablon = shablon.id and link.id_notebook =" + id + " limit 1;";
+            SQLiteCommand Command = new SQLiteCommand(query, connection);
+
+            SQLiteDataReader reader = Command.ExecuteReader();
+            if (reader.Read())
+            {
+                answer = reader["text"].ToString();
+
+            }
+            reader.Close();
+
+            closeConnection(ref connection);
+
+            return answer;
+        }
+
+        public void addShablon(shablons post)
+        {
+            // Добавление записи в таблицу шаблонов
+            SQLiteConnection connection = openConnection();
+
+            string query = "INSERT INTO shablon (sex, text) VALUES ('" + post.sex + "','" + post.text+ "');";
+            SQLiteCommand Command = new SQLiteCommand(query, connection);
+
+            Command.ExecuteNonQuery();
+
+            closeConnection(ref connection);
+        }
+
+        public void setShablon(shablons post)
+        {
+            // Изменение записи в таблице Шаблонов
+            SQLiteConnection connection = openConnection();
+
+            string query = "UPDATE shablon SET text = '" + post.text + "', sex = '" + post.sex + "' WHERE id = "+ post.id +";";
+            SQLiteCommand Command = new SQLiteCommand(query, connection);
+
+            Command.ExecuteNonQuery();
+
+            closeConnection(ref connection);
         }
 
         public void deleteShablon(int id)
         {
+            SQLiteConnection connection = openConnection();
 
+            string query = "DELETE FROM shablon WHERE id= '" + id + "';";
+            SQLiteCommand Command = new SQLiteCommand(query, connection);
+
+            Command.ExecuteNonQuery();
+
+            closeConnection(ref connection);
         }
 
         public addresss getSingleAddress(int id)
@@ -412,6 +635,18 @@ namespace notepad
             SQLiteConnection connection = openConnection();
 
             string query = "DELETE FROM phone WHERE id_notebook= '" + id + "';";
+            SQLiteCommand Command = new SQLiteCommand(query, connection);
+
+            Command.ExecuteNonQuery();
+
+            closeConnection(ref connection);
+        }
+
+        public void deleteLink(int id)
+        {
+            SQLiteConnection connection = openConnection();
+
+            string query = "DELETE FROM link WHERE id_notebook = " + id + ";";
             SQLiteCommand Command = new SQLiteCommand(query, connection);
 
             Command.ExecuteNonQuery();
