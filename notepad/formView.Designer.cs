@@ -157,10 +157,11 @@
             // 
             // more
             // 
-            this.more.AutoSize = true;
-            this.more.Location = new System.Drawing.Point(6, 22);
+            this.more.AutoEllipsis = true;
+            this.more.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.more.Location = new System.Drawing.Point(3, 16);
             this.more.Name = "more";
-            this.more.Size = new System.Drawing.Size(0, 13);
+            this.more.Size = new System.Drawing.Size(278, 321);
             this.more.TabIndex = 5;
             // 
             // groupBox8
@@ -498,7 +499,6 @@
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.groupBox10.ResumeLayout(false);
-            this.groupBox10.PerformLayout();
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox9.ResumeLayout(false);

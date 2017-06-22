@@ -51,3 +51,5 @@ C:\Users\admin\Documents\github\notepad\notepad\obj\Debug\notepad.shablon.resour
 C:\Users\admin\Documents\github\notepad\notepad\obj\Debug\notepad.shablonEdit.resources
 C:\Users\FastStim1\Desktop\Толя\notepad\notepad\obj\Debug\notepad.shablonView.resources
 C:\Users\FastStim1\Desktop\Толя\notepad\notepad\obj\Debug\notepad.shablonList.resources
+C:\Users\admin\Documents\github\notepad\notepad\obj\Debug\notepad.shablonList.resources
+C:\Users\admin\Documents\github\notepad\notepad\obj\Debug\notepad.shablonView.resources

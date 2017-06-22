@@ -58,12 +58,12 @@
             this.text.BackColor = System.Drawing.SystemColors.Control;
             this.text.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.text.Dock = System.Windows.Forms.DockStyle.Top;
-            this.text.Location = new System.Drawing.Point(0, 0);
+            this.text.Location = new System.Drawing.Point(5, 5);
             this.text.Margin = new System.Windows.Forms.Padding(40);
             this.text.Multiline = true;
             this.text.Name = "text";
             this.text.ReadOnly = true;
-            this.text.Size = new System.Drawing.Size(284, 220);
+            this.text.Size = new System.Drawing.Size(274, 220);
             this.text.TabIndex = 2;
             // 
             // shablonView
@@ -75,6 +75,7 @@
             this.Controls.Add(this.rebuild);
             this.Controls.Add(this.close);
             this.Name = "shablonView";
+            this.Padding = new System.Windows.Forms.Padding(5);
             this.Text = "Просмотр поздравления";
             this.Load += new System.EventHandler(this.shablonView_Load);
             this.ResumeLayout(false);
